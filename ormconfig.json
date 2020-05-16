@@ -1,17 +1,30 @@
-{
-  "type": "postgres",
-  "host": "localhost",
-  "port": 5432,
-  "username": "postgres",
-  "password": "agromart",
-  "database": "agromart",
-  "entities": [
-    "./src/models/*.ts"
-  ],
-  "migrations": [
-    "./src/database/migrations/*.ts"
-  ],
-  "cli": {
-    "migrationsDir": "./src/database/migrations"
+[
+  {
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "agromart",
+    "database": "agromart",
+    "entities": [
+      "./src/models/*.ts"
+    ],
+    "migrations": [
+      "./src/database/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./src/database/migrations"
+    }
+  },
+  {
+    "name": "mongo",
+    "type": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "agromart",
+    "useUnifiedTopology": true,
+    "entities": [
+      "./src/schemas/*.ts"
+    ]
   }
-}
+]
