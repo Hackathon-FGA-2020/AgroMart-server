@@ -30,6 +30,15 @@ class Store {
   @Column()
   description: string;
 
+  @Column()
+  city: string;
+
+  @Column()
+  open_at: string;
+
+  @Column()
+  close_at: string;
+
   @Column(type => Localization)
   localization: Localization;
 

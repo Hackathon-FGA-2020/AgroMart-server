@@ -20,6 +20,9 @@ interface Request {
   name: string;
   contact_number: string;
   description: string;
+  city: string;
+  open_at: string;
+  close_at: string;
   localization: Localization;
   products: Product[];
 }
@@ -31,6 +34,9 @@ class CreateUserService {
     name,
     contact_number,
     description,
+    city,
+    open_at,
+    close_at,
     localization,
     products,
   }: Request): Promise<Store> {
@@ -50,6 +56,9 @@ class CreateUserService {
       name,
       contact_number,
       description,
+      city,
+      open_at,
+      close_at,
       localization,
       products,
     });

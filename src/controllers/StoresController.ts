@@ -12,6 +12,9 @@ export default class StoresController {
       name,
       contact_number,
       description,
+      city,
+      open_at,
+      close_at,
       localization,
       products,
     } = request.body;
@@ -24,6 +27,9 @@ export default class StoresController {
       name,
       contact_number,
       description,
+      city,
+      open_at,
+      close_at,
       localization,
       products,
     });
@@ -52,13 +58,46 @@ export default class StoresController {
   public async index(request: Request, response: Response): Promise<Response> {
     const storesRepository = getMongoRepository(Store, 'mongo');
 
-    const store = await storesRepository.find();
+    const stores = await storesRepository.find();
 
-    return response.json(store);
+    return response.json(stores);
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    return response.json({ ok: true });
+    const { id } = request.user;
+    const {
+      banner,
+      name,
+      contact_number,
+      description,
+      city,
+      open_at,
+      close_at,
+      localization,
+      products,
+    } = request.body;
+
+    const storesRepository = getMongoRepository(Store, 'mongo');
+
+    const store = await storesRepository.findOneAndUpdate(
+      { owner_id: id },
+      {
+        $set: {
+          banner,
+          name,
+          contact_number,
+          description,
+          city,
+          open_at,
+          close_at,
+          localization,
+          products,
+        },
+      },
+      { returnOriginal: false },
+    );
+
+    return response.json(store);
   }
 
   public async delete(request: Request, response: Response): Promise<Response> {
