@@ -56,9 +56,25 @@ export default class StoresController {
   }
 
   public async index(request: Request, response: Response): Promise<Response> {
+    const { name, city } = request.body;
+
     const storesRepository = getMongoRepository(Store, 'mongo');
 
     const stores = await storesRepository.find();
+
+    if (city) {
+      const filteredStores = stores.filter(store => store.city === city);
+
+      return response.json(filteredStores);
+    }
+
+    if (name) {
+      const filteredStores = stores.filter(store =>
+        store.name.toLocaleLowerCase().includes(name.toLocaleLowerCase()),
+      );
+
+      return response.json(filteredStores);
+    }
 
     return response.json(stores);
   }
