@@ -1,23 +1,17 @@
 import { Router } from 'express';
 
-import CreateUserService from '../services/CreateUserService';
+import UsersController from '../controllers/UsersController';
+import authMiddleware from '../middlewares/ensureAuthenticate';
 
 const usersRouter = Router();
+const usersController = new UsersController();
 
-usersRouter.post('/', async (request, response) => {
-  const { name, email, password } = request.body;
+usersRouter.post('/', usersController.create);
+usersRouter.get('/:id', usersController.show);
 
-  const createUser = new CreateUserService();
+usersRouter.use(authMiddleware);
 
-  const user = await createUser.execute({
-    name,
-    email,
-    password,
-  });
-
-  delete user.password;
-
-  return response.json(user);
-});
+usersRouter.put('/', usersController.update);
+usersRouter.delete('/', usersController.delete);
 
 export default usersRouter;

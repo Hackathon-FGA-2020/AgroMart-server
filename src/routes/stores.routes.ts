@@ -1,32 +1,18 @@
 import { Router } from 'express';
 
-import CreateStoreService from '../services/CreateStoreService';
+import StoresController from '../controllers/StoresController';
+import authMiddleware from '../middlewares/ensureAuthenticate';
 
 const storesRouter = Router();
+const storesController = new StoresController();
 
-storesRouter.post('/', async (request, response) => {
-  const {
-    banner,
-    name,
-    contact_number,
-    description,
-    localization,
-    products,
-  } = request.body;
+storesRouter.get('/:id', storesController.show);
+storesRouter.get('/', storesController.index);
 
-  const createStore = new CreateStoreService();
+storesRouter.use(authMiddleware);
 
-  const store = await createStore.execute({
-    owner_id: request.user.id,
-    banner,
-    name,
-    contact_number,
-    description,
-    localization,
-    products,
-  });
-
-  return response.json({ store });
-});
+storesRouter.post('/', storesController.create);
+storesRouter.put('/', storesController.update);
+storesRouter.delete('/', storesController.delete);
 
 export default storesRouter;
