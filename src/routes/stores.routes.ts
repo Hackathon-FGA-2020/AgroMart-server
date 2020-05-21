@@ -7,7 +7,7 @@ const storesRouter = Router();
 const storesController = new StoresController();
 
 storesRouter.get('/:id', storesController.show);
-storesRouter.post('/', storesController.index);
+storesRouter.get('/', storesController.index);
 
 storesRouter.use(authMiddleware);
 

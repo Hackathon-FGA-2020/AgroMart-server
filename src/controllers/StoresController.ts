@@ -56,7 +56,7 @@ export default class StoresController {
   }
 
   public async index(request: Request, response: Response): Promise<Response> {
-    const { name, city } = request.body;
+    const { name, city } = request.query;
 
     const storesRepository = getMongoRepository(Store, 'mongo');
 
