@@ -39,10 +39,10 @@ class Store {
   @Column()
   close_at: string;
 
-  @Column(type => Localization)
+  @Column()
   localization: Localization;
 
-  @Column(type => Product)
+  @Column()
   products: Product[];
 
   @CreateDateColumn()
