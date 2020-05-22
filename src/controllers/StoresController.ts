@@ -56,7 +56,7 @@ export default class StoresController {
   }
 
   public async index(request: Request, response: Response): Promise<Response> {
-    const { name, city } = request.query;
+    const { name, city, userId } = request.query;
 
     const storesRepository = getMongoRepository(Store, 'mongo');
 
@@ -72,6 +72,12 @@ export default class StoresController {
       const filteredStores = stores.filter(store =>
         store.name.toLocaleLowerCase().includes(name.toLocaleLowerCase()),
       );
+
+      return response.json(filteredStores);
+    }
+
+    if (userId) {
+      const filteredStores = stores.filter(store => store.owner_id === userId);
 
       return response.json(filteredStores);
     }
