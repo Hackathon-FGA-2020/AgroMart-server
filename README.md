@@ -93,7 +93,7 @@ Execute:
 > \$ yarn dev:server
 ---
 
-## Front-End
+## Aplicatibo
 
 Os dados são consumidos pela aplicativo mobile disponível em https://github.com/Hackathon-FGA-2020/Desafio-3-Grupo-6-mobile
 
