@@ -17,20 +17,7 @@ Em um momento tão difícil como esse, confiança e honestidade é essencial par
 
 <!-- Adicionar gif do app -->
 
-## Funcionalidades
 
-- Criação de conta de usuário e Autenticação;
-- Criação e gerenciamento de loja;
-- Visualização de principais recomendações e listagem de todas as lojas na página principal;
-- Pesquisar lojas por localização;
-- Pesquisar lojas por nome;
-- Pesquisar lojas por região administrativa;
-- Visualização de loja com produtos e preços;
-- Link para contato com o dono da loja;
-- Link com a rota no mapa para a loja;
-- Visualizar recomendações perante a pandemia;
-
----
 
 ## Conheça nossa equipe
 
@@ -93,7 +80,7 @@ Execute:
 > \$ yarn dev:server
 ---
 
-## Aplicatibo
+## Aplicativo
 
 Os dados são consumidos pela aplicativo mobile disponível em https://github.com/Hackathon-FGA-2020/Desafio-3-Grupo-6-mobile
 
