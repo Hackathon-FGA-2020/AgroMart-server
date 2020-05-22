@@ -13,6 +13,6 @@ storesRouter.use(authMiddleware);
 
 storesRouter.post('/', storesController.create);
 storesRouter.put('/', storesController.update);
-storesRouter.delete('/', storesController.delete);
+storesRouter.delete('/:id', storesController.delete);
 
 export default storesRouter;

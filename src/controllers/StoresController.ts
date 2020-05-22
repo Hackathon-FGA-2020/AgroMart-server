@@ -117,6 +117,10 @@ export default class StoresController {
   }
 
   public async delete(request: Request, response: Response): Promise<Response> {
-    return response.json({ ok: true });
+    const { id } = request.params;
+
+    const storesRepository = getMongoRepository(Store, 'mongo');
+    const store = await storesRepository.findOneAndDelete({ owner_id: id });
+    return response.json({ store });
   }
 }
