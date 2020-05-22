@@ -41,20 +41,6 @@ Em um momento tão difícil como esse, confiança e honestidade é essencial par
 
 ---
 
-## Proximos Passos:
-
-Como o hackaton possui um curto periodo de tempo para o desenvolvimento, não foram implementas algumas funcionalidades que somariam ao aplicativo, como:
-
-- Integração com meios de pagamento.
-- Sessão de comentários.
-- Avaliação das lojas pelo clientes.
-- Chat proprio do aplicativo.
-- Edição de perfil.
-- Recuperação de senha.
-- Mascaras em inputs.
-
----
-
 ## Como executar o projeto
 
 Clone o repositorio:
@@ -82,7 +68,7 @@ Execute:
 
 ## Aplicativo
 
-Os dados são consumidos pela aplicativo mobile disponível em https://github.com/Hackathon-FGA-2020/Desafio-3-Grupo-6-mobile
+Os dados são consumidos pelo aplicativo mobile disponível em https://github.com/Hackathon-FGA-2020/Desafio-3-Grupo-6-mobile
 
 ---
 
