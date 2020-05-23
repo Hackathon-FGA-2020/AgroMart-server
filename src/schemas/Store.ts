@@ -30,10 +30,19 @@ class Store {
   @Column()
   description: string;
 
-  @Column(type => Localization)
+  @Column()
+  city: string;
+
+  @Column()
+  open_at: string;
+
+  @Column()
+  close_at: string;
+
+  @Column()
   localization: Localization;
 
-  @Column(type => Product)
+  @Column()
   products: Product[];
 
   @CreateDateColumn()
