@@ -51,15 +51,15 @@ Acesse a pasta:
 
 > \$ cd Desafio-3-Grupo-6
 
-- É necessário ter yarn instalado.
+- É necessário ter node e o yarn instalados.
 
 Instale as dependências:
 
 > \$ yarn
 
-- É necessário possuir os bancos de dados (Postgres e Mongo) instalados:
+- É necessário possuir os bancos de dados (Postgres e Mongo) instalados e criar as bases de dados manualmente;
 
-- Configurar credenciais do banco dados no arquivo `ormconfig.json`:
+- Configurar credenciais do banco dados no arquivo `ormconfig.json`;
 
 Execute:
 
